@@ -1,12 +1,12 @@
 import express from 'express';
 import db from './database.js';
-
+import cors from "cors"
 const app = express();
 const port = 3000;
 
 // Middleware para analizar cuerpos de solicitud JSON
 app.use(express.json());
-
+app.use(cors())
 // Ruta POST para recibir datos del sensor
 app.post('/data', (req, res) => {
   const data = req.body;
